@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReptileRisk AI – Real-Time Detection for Safer Communities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ReptileRisk AI</h1>
+    <p>Real-Time Detection for Safer Communities</p>
+    <p>Watching the water, protecting lives.</p>
+    <p><strong>Author:</strong> Ian Bush</p>
+    <p><strong>Course:</strong> (replace with your course name)</p>
+  </header>
+
+  <nav>
+    <a href="#problem">Problem & Motivation</a>
+    <a href="#approach">Technical Approach (AlexNet)</a>
+    <a href="#visualizations">Visualizations</a>
+    <a href="#results">Results</a>
+    <a href="#takeaways">Takeaways</a>
+  </nav>
+
+  <section id="problem">
+    <h2>Problem & Motivation</h2>
+    <h3>The Hidden Danger in Our Waterways</h3>
+    <p>
+      Across the Southern United States, thousands of ponds, canals, and retention basins provide
+      ideal habitats for alligators. These waterways are embedded in golf courses, parks, and
+      residential neighborhoods—places where people routinely walk, jog, and recreate.
+    </p>
+    <p>
+      Alligators are masters of concealment, often remaining partially submerged or hidden during
+      low-visibility conditions (especially at dusk and dawn). Their cryptic nature makes detection
+      nearly impossible until it is too late.
+    </p>
+
+    <h4>Cryptic Nature</h4>
+    <ul>
+      <li>Alligators blend seamlessly with water surfaces, logs, and vegetation.</li>
+      <li>They exploit shadows, reflections, and murky water to stay hidden.</li>
+    </ul>
+
+    <h4>High-Risk Areas</h4>
+    <ul>
+      <li>People and pets frequently walk close to shorelines.</li>
+      <li>Golfers, pedestrians, children, and dog walkers are often within a few feet of the water’s edge.</li>
+    </ul>
+
+    <h4>No Current Scalable Solution</h4>
+    <ul>
+      <li>No widely deployed, automated system exists today for real-time alligator detection.</li>
+      <li>Communities rely heavily on manual observation and occasional patrols.</li>
+    </ul>
+
+    <h3>Human Safety Risk: Data Behind the Danger</h3>
+    <p>
+      Florida records numerous alligator attacks annually, with several resulting in fatalities.
+      Many incidents occur within just 10 feet of water edges, where humans and alligators intersect
+      most frequently.
+    </p>
+    <p>
+      Delayed recognition is the critical factor in preventable accidents: when an alligator is
+      noticed too late, escape options disappear quickly.
+    </p>
+
+    <h3>Why Current Solutions Fall Short</h3>
+    <h4>Manual Patrol Limitations</h4>
+    <ul>
+      <li>Manual patrols cannot provide 24/7 coverage across hundreds of waterways.</li>
+      <li>Staffing constraints create gaps during high-risk periods like dawn and dusk.</li>
+    </ul>
+
+    <h4>Visual Detection Failures</h4>
+    <ul>
+      <li>Even trained personnel struggle to see alligators hidden in shadows and vegetation.</li>
+      <li>Camouflage and partial submersion make reliable detection extremely challenging.</li>
+    </ul>
+
+    <h4>The Critical Gap</h4>
+    <p>
+      Communities need a scalable, continuous, real-time detection system that never sleeps,
+      never blinks, and monitors every water edge simultaneously with consistent vigilance.
+    </p>
+  </section>
+
+  <section id="approach">
+    <h2>Technical Approach (AlexNet-Based CNN)</h2>
+    <h3>Project Mission</h3>
+    <p>
+      ReptileRisk AI transforms passive water monitoring into continuous,
+      active threat detection. The goal is to provide communities with automated vigilance that
+      helps prevent dangerous encounters before they happen.
+    </p>
+
+    <h3>System Overview</h3>
+    <ul>
+      <li><strong>Continuous Monitoring:</strong> Strategically placed cameras and drones capture video streams around waterways.</li>
+      <li><strong>Edge AI Processing:</strong> Frames are processed by an on-site or nearby AI engine for low-latency inference.</li>
+      <li><strong>Instant Alerts:</strong> Mobile notifications, dashboard alerts, and smart signage.</li>
+    </ul>
+
+    <h3>AlexNet Architecture</h3>
+    <ol>
+      <li><strong>Convolutional Layers (1–5)</strong> – Detect edges to complex reptile features.</li>
+      <li><strong>Max Pooling</strong> – Reduces dimensions while preserving features.</li>
+      <li><strong>Fully Connected Layers</strong> – High-level classification features.</li>
+      <li><strong>Softmax Output</strong> – Probability scores for alligator presence.</li>
+    </ol>
+
+    <h3>Data Input & Preprocessing</h3>
+    <ul>
+      <li>224×224 RGB input images</li>
+      <li>Sources: Cameras and drones</li>
+      <li>Glare reduction and normalization</li>
+      <li>Data augmentation: flips, rotations, brightness/contrast</li>
+    </ul>
+
+    <h3>Model Training</h3>
+    <ul>
+      <li>80% training / 20% validation</li>
+      <li>Loss: Cross-entropy</li>
+      <li>Optimizer: Adam</li>
+      <li>Learning Rate: 0.001</li>
+      <li>Epochs: 5</li>
+      <li>Metrics: Accuracy, Precision, Recall, F1-score</li>
+    </ul>
+  </section>
+
+  <section id="visualizations">
+    <h2>Visualizations</h2>
+    <p>Place your Colab screenshots into the images folder and they will display here.</p>
+    <img src="images/sample_frames.png" alt="Sample Frames">
+    <img src="images/training_curves.png" alt="Training Curves">
+    <img src="images/confusion_matrix.png" alt="Confusion Matrix">
+    <img src="images/alexnet_vs_resnet.png" alt="Model Comparison">
+  </section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <ul>
+      <li>Batch Size: 16 vs 64 tested</li>
+      <li>Learning Rate: 0.001 vs 0.0001</li>
+      <li>Data Augmentation improved validation stability</li>
+      <li>ResNet18 achieved best validation performance</li>
+      <li>AlexNet provided fast real-time baseline</li>
+    </ul>
+
+    <p><strong>Insert your actual accuracy, precision, recall, and F1-score here.</strong></p>
+  </section>
+
+  <section id="takeaways">
+    <h2>Takeaways & Future Expansion</h2>
+    <ul>
+      <li>Alligator detection using CNNs is technically feasible</li>
+      <li>Augmentation and tuning strongly impact performance</li>
+      <li>System can scale to hundreds of waterways</li>
+      <li>Future: invasive species detection & wildlife conservation</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>ReptileRisk AI – Real-Time Detection for Safer Communities</p>
+    <p>Hosted with GitHub Pages</p>
+  </footer>
+</body>
+</html>
